@@ -1,0 +1,752 @@
+{% extends 'master' %}
+
+{% block css %}
+
+<link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+<link href="bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+<link href="bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
+<link href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+<link href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
+<link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
+<link href="css/main.css?version=4.4.0" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<body class="menu-position-side menu-side-left full-screen">
+<div class="all-wrapper no-padding-content solid-bg-all">
+  <div class="search-with-suggestions-w">
+    <div class="search-with-suggestions-modal">
+      <div class="element-search">
+        <input class="search-suggest-input" placeholder="Start typing to search..." type="text">
+        <div class="close-search-suggestions">
+          <i class="os-icon os-icon-x"></i>
+        </div>
+        </input>
+      </div>
+      <div class="search-suggestions-group">
+        <div class="ssg-header">
+          <div class="ssg-icon">
+            <div class="os-icon os-icon-box"></div>
+          </div>
+          <div class="ssg-name">
+            Projects
+          </div>
+          <div class="ssg-info">
+            24 Total
+          </div>
+        </div>
+        <div class="ssg-content">
+          <div class="ssg-items ssg-items-boxed">
+            <a class="ssg-item" href="users_profile_big.html">
+              <div class="item-media" style="background-image: url(img/company6.png)"></div>
+              <div class="item-name">
+                Integ<span>ration</span> with API
+              </div>
+            </a><a class="ssg-item" href="users_profile_big.html">
+            <div class="item-media" style="background-image: url(img/company7.png)"></div>
+            <div class="item-name">
+              Deve<span>lopm</span>ent Project
+            </div>
+          </a>
+          </div>
+        </div>
+      </div>
+      <div class="search-suggestions-group">
+        <div class="ssg-header">
+          <div class="ssg-icon">
+            <div class="os-icon os-icon-users"></div>
+          </div>
+          <div class="ssg-name">
+            Customers
+          </div>
+          <div class="ssg-info">
+            12 Total
+          </div>
+        </div>
+        <div class="ssg-content">
+          <div class="ssg-items ssg-items-list">
+            <a class="ssg-item" href="users_profile_big.html">
+              <div class="item-media" style="background-image: url(img/avatar1.jpg)"></div>
+              <div class="item-name">
+                John Ma<span>yer</span>s
+              </div>
+            </a><a class="ssg-item" href="users_profile_big.html">
+            <div class="item-media" style="background-image: url(img/avatar2.jpg)"></div>
+            <div class="item-name">
+              Th<span>omas</span> Mullier
+            </div>
+          </a><a class="ssg-item" href="users_profile_big.html">
+            <div class="item-media" style="background-image: url(img/avatar3.jpg)"></div>
+            <div class="item-name">
+              Kim C<span>olli</span>ns
+            </div>
+          </a>
+          </div>
+        </div>
+      </div>
+      <div class="search-suggestions-group">
+        <div class="ssg-header">
+          <div class="ssg-icon">
+            <div class="os-icon os-icon-folder"></div>
+          </div>
+          <div class="ssg-name">
+            Files
+          </div>
+          <div class="ssg-info">
+            17 Total
+          </div>
+        </div>
+        <div class="ssg-content">
+          <div class="ssg-items ssg-items-blocks">
+            <a class="ssg-item" href="#">
+              <div class="item-icon">
+                <i class="os-icon os-icon-file-text"></i>
+              </div>
+              <div class="item-name">
+                Work<span>Not</span>e.txt
+              </div>
+            </a><a class="ssg-item" href="#">
+            <div class="item-icon">
+              <i class="os-icon os-icon-film"></i>
+            </div>
+            <div class="item-name">
+              V<span>ideo</span>.avi
+            </div>
+          </a><a class="ssg-item" href="#">
+            <div class="item-icon">
+              <i class="os-icon os-icon-database"></i>
+            </div>
+            <div class="item-name">
+              User<span>Tabl</span>e.sql
+            </div>
+          </a><a class="ssg-item" href="#">
+            <div class="item-icon">
+              <i class="os-icon os-icon-image"></i>
+            </div>
+            <div class="item-name">
+              wed<span>din</span>g.jpg
+            </div>
+          </a>
+          </div>
+          <div class="ssg-nothing-found">
+            <div class="icon-w">
+              <i class="os-icon os-icon-eye-off"></i>
+            </div>
+            <span>No files were found. Try changing your query...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout-w">
+    <!--------------------
+    START - Mobile Menu
+    -------------------->
+    <div class="menu-mobile menu-activated-on-click color-scheme-dark">
+      <div class="mm-logo-buttons-w">
+        <a class="mm-logo" href="index.html"><img src="img/logo.png"><span>Clean Admin</span></a>
+        <div class="mm-buttons">
+          <div class="content-panel-open">
+            <div class="os-icon os-icon-grid-circles"></div>
+          </div>
+          <div class="mobile-menu-trigger">
+            <div class="os-icon os-icon-hamburger-menu-1"></div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-and-user">
+        <div class="logged-user-w">
+          <div class="avatar-w">
+            <img alt="" src="img/avatar1.jpg">
+          </div>
+          <div class="logged-user-info-w">
+            <div class="logged-user-name">
+              Maria Gomez
+            </div>
+            <div class="logged-user-role">
+              Administrator
+            </div>
+          </div>
+        </div>
+        <!--------------------
+        START - Mobile Menu List
+        -------------------->
+        <ul class="main-menu">
+          <li class="has-sub-menu">
+            <a href="index.html">
+              <div class="icon-w">
+                <div class="os-icon os-icon-layout"></div>
+              </div>
+              <span>Dashboard</span></a>
+            <ul class="sub-menu">
+              <li>
+                <a href="index.html">Dashboard 1</a>
+              </li>
+              <li>
+                <a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">Hot</strong></a>
+              </li>
+              <li>
+                <a href="apps_support_dashboard.html">Dashboard 3</a>
+              </li>
+              <li>
+                <a href="apps_projects.html">Dashboard 4</a>
+              </li>
+              <li>
+                <a href="apps_bank.html">Dashboard 5</a>
+              </li>
+              <li>
+                <a href="layouts_menu_top_image.html">Dashboard 6</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!--------------------
+        END - Mobile Menu List
+        -------------------->
+      </div>
+    </div>
+    <!--------------------
+    END - Mobile Menu
+    --------------------><!--------------------
+        START - Main Menu
+        -------------------->
+    <div
+      class="menu-w color-scheme-dark color-style-bright menu-position-side menu-side-left menu-layout-mini sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
+      <div class="logo-w">
+        <a class="logo" href="index.html">
+          <div class="logo-element"></div>
+          <div class="logo-label">
+            Clean Admin
+          </div>
+        </a>
+      </div>
+      <div class="logged-user-w avatar-inline">
+        <div class="logged-user-i">
+          <div class="avatar-w">
+            <img alt="" src="img/avatar1.jpg">
+          </div>
+          <div class="logged-user-info-w">
+            <div class="logged-user-name">
+              Maria Gomez
+            </div>
+            <div class="logged-user-role">
+              Administrator
+            </div>
+          </div>
+          <div class="logged-user-toggler-arrow">
+            <div class="os-icon os-icon-chevron-down"></div>
+          </div>
+          <div class="logged-user-menu color-style-bright">
+            <div class="logged-user-avatar-info">
+              <div class="avatar-w">
+                <img alt="" src="img/avatar1.jpg">
+              </div>
+              <div class="logged-user-info-w">
+                <div class="logged-user-name">
+                  Maria Gomez
+                </div>
+                <div class="logged-user-role">
+                  Administrator
+                </div>
+              </div>
+            </div>
+            <div class="bg-icon">
+              <i class="os-icon os-icon-wallet-loaded"></i>
+            </div>
+            <ul>
+              <li>
+                <a href="apps_email.html"><i class="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a>
+              </li>
+              <li>
+                <a href="users_profile_big.html"><i
+                  class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
+              </li>
+              <li>
+                <a href="users_profile_small.html"><i
+                  class="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
+              </li>
+              <li>
+                <a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a>
+              </li>
+              <li>
+                <a href="/logout"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h1 class="menu-page-header">
+        Page Header
+      </h1>
+      <ul class="main-menu">
+        <li class="sub-header">
+          <span>Layouts</span>
+        </li>
+        <li class="selected has-sub-menu">
+          <a href="index.html">
+            <div class="icon-w">
+              <div class="os-icon os-icon-layout"></div>
+            </div>
+            <span>Dashboard</span></a>
+          <div class="sub-menu-w">
+            <div class="sub-menu-header">
+              Dashboard
+            </div>
+            <div class="sub-menu-icon">
+              <i class="os-icon os-icon-layout"></i>
+            </div>
+            <div class="sub-menu-i">
+              <ul class="sub-menu">
+                <li>
+                  <a href="index.html">Dashboard 1</a>
+                </li>
+                <li>
+                  <a href="apps_crypto.html">Crypto Dashboard <strong class="badge badge-danger">Hot</strong></a>
+                </li>
+                <li>
+                  <a href="apps_support_dashboard.html">Dashboard 3</a>
+                </li>
+                <li>
+                  <a href="apps_projects.html">Dashboard 4</a>
+                </li>
+                <li>
+                  <a href="apps_bank.html">Dashboard 5</a>
+                </li>
+                <li>
+                  <a href="layouts_menu_top_image.html">Dashboard 6</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!--------------------
+    END - Main Menu
+    -------------------->
+    <div class="content-w">
+      <!--------------------
+      START - Top Bar
+      -------------------->
+      <div class="top-bar color-scheme-transparent d-none">
+        <!--------------------
+        START - Top Menu Controls
+        -------------------->
+        <div class="top-menu-controls">
+          <div class="element-search autosuggest-search-activator">
+            <input placeholder="Start typing to search..." type="text">
+          </div>
+          <!--------------------
+          START - Messages Link in secondary top menu
+          -------------------->
+          <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left">
+            <i class="os-icon os-icon-mail-14"></i>
+            <div class="new-messages-count">
+              12
+            </div>
+            <div class="os-dropdown light message-list">
+              <ul>
+                <li>
+                  <a href="#">
+                    <div class="user-avatar-w">
+                      <img alt="" src="img/avatar1.jpg">
+                    </div>
+                    <div class="message-content">
+                      <h6 class="message-from">
+                        John Mayers
+                      </h6>
+                      <h6 class="message-title">
+                        Account Update
+                      </h6>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="user-avatar-w">
+                      <img alt="" src="img/avatar2.jpg">
+                    </div>
+                    <div class="message-content">
+                      <h6 class="message-from">
+                        Phil Jones
+                      </h6>
+                      <h6 class="message-title">
+                        Secutiry Updates
+                      </h6>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="user-avatar-w">
+                      <img alt="" src="img/avatar3.jpg">
+                    </div>
+                    <div class="message-content">
+                      <h6 class="message-from">
+                        Bekky Simpson
+                      </h6>
+                      <h6 class="message-title">
+                        Vacation Rentals
+                      </h6>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="user-avatar-w">
+                      <img alt="" src="img/avatar4.jpg">
+                    </div>
+                    <div class="message-content">
+                      <h6 class="message-from">
+                        Alice Priskon
+                      </h6>
+                      <h6 class="message-title">
+                        Payment Confirmation
+                      </h6>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--------------------
+          END - Messages Link in secondary top menu
+          --------------------><!--------------------
+              START - Settings Link in secondary top menu
+              -------------------->
+          <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
+            <i class="os-icon os-icon-ui-46"></i>
+            <div class="os-dropdown">
+              <div class="icon-w">
+                <i class="os-icon os-icon-ui-46"></i>
+              </div>
+              <ul>
+                <li>
+                  <a href="users_profile_small.html"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
+                </li>
+                <li>
+                  <a href="users_profile_small.html"><i
+                    class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
+                </li>
+                <li>
+                  <a href="users_profile_small.html"><i class="os-icon os-icon-ui-44"></i><span>My Invoices</span></a>
+                </li>
+                <li>
+                  <a href="users_profile_small.html"><i
+                    class="os-icon os-icon-ui-15"></i><span>Cancel Account</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--------------------
+          END - Settings Link in secondary top menu
+          --------------------><!--------------------
+              START - User avatar and menu in secondary top menu
+              -------------------->
+          <div class="logged-user-w">
+            <div class="logged-user-i">
+              <div class="avatar-w">
+                <img alt="" src="img/avatar1.jpg">
+              </div>
+              <div class="logged-user-menu color-style-bright">
+                <div class="logged-user-avatar-info">
+                  <div class="avatar-w">
+                    <img alt="" src="img/avatar1.jpg">
+                  </div>
+                  <div class="logged-user-info-w">
+                    <div class="logged-user-name">
+                      Maria Gomez
+                    </div>
+                    <div class="logged-user-role">
+                      Administrator
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-icon">
+                  <i class="os-icon os-icon-wallet-loaded"></i>
+                </div>
+                <ul>
+                  <li>
+                    <a href="apps_email.html"><i class="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a>
+                  </li>
+                  <li>
+                    <a href="users_profile_big.html"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
+                  </li>
+                  <li>
+                    <a href="users_profile_small.html"><i
+                      class="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--------------------
+          END - User avatar and menu in secondary top menu
+          -------------------->
+        </div>
+        <!--------------------
+        END - Top Menu Controls
+        -------------------->
+      </div>
+      <!--------------------
+      END - Top Bar
+      -------------------->
+      <div class="content-i">
+        <div class="content-box">
+          <div class="app-email-w">
+            <div class="app-email-i">
+              <!--------------------
+              START - Email Side menu
+              -------------------->
+              <!--            <div class="ae-side-menu">-->
+              <!--              <div class="aem-head">-->
+              <!--                <a class="ae-side-menu-toggler" href="#"><i class="os-icon os-icon-hamburger-menu-2"></i></a>-->
+              <!--              </div>-->
+              <!--              <ul class="ae-main-menu">-->
+              <!--                <li class="active">-->
+              <!--                  <a href="#"><i class="os-icon os-icon-phone-21"></i><span>Inbox</span></a>-->
+              <!--                </li>-->
+              <!--                <li>-->
+              <!--                  <a href="#"><i class="os-icon os-icon-ui-92"></i><span>Sent</span></a>-->
+              <!--                </li>-->
+              <!--                <li>-->
+              <!--                  <a href="#"><i class="os-icon os-icon-documents-03"></i><span>Draft</span></a>-->
+              <!--                </li>-->
+              <!--                <li>-->
+              <!--                  <a href="#"><i class="os-icon os-icon-ui-15"></i><span>Trash</span></a>-->
+              <!--                </li>-->
+              <!--                <li>-->
+              <!--                  <a href="#"><i class="os-icon os-icon-ui-44"></i><span>Archive</span></a>-->
+              <!--                </li>-->
+              <!--              </ul>-->
+              <!--              <div class="ae-labels">-->
+              <!--                <div class="ae-labels-header">-->
+              <!--                  <i class="os-icon os-icon-ui-54"></i><span>Labels</span>-->
+              <!--                </div>-->
+              <!--                <a class="ae-label ae-label-red" href="#"><span class="label-pin"></span><span class="label-value">Corporate</span></a><a class="ae-label ae-label-green" href="#"><span class="label-pin"></span><span class="label-value">Personal</span></a><a class="ae-label ae-label-blue" href="#"><span class="label-pin"></span><span class="label-value">Statements</span></a><a class="ae-label ae-label-yellow" href="#"><span class="label-pin"></span><span class="label-value">Projects</span></a>-->
+              <!--              </div>-->
+              <!--            </div>-->
+              <!--------------------
+              END - Email Side menu
+              --------------------><!--------------------
+    START - Email Messages List
+    -------------------->
+              <div class="ae-list-w">
+                <div class="ael-head">
+                  <div class="actions-left">
+                    <select>
+                      <option>
+                        Sort by time
+                      </option>
+                      <option>
+                        Favourites
+                      </option>
+                    </select>
+                  </div>
+                  <div class="actions-right">
+                    <a href="#"><i class="os-icon os-icon-ui-22" data-target="#taskModal" data-toggle="modal"></i></a>
+                  </div>
+                </div>
+                <div class="ae-list">
+                  {% for note in notes %}
+                  <div class="ae-item with-status  status-green" onclick="noteClick(this)" pos={{note.index}}>
+                    <div class="aei-content" style="width: 100%">
+                      <div class="aei-timestamp">
+                        {{note.date}}
+                      </div>
+                      <div class="aei-sub-title">
+                        {{note.title}}
+                      </div>
+                      <div class="aei-text" style="text-overflow: ellipsis; max-height: 80px; overflow: hidden">
+                        {{note.content}}
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+<!--                <a class="ae-load-more" href="#"><span>Load More Messages</span></a>-->
+              </div>
+              <!--------------------
+              END - Email Messages List
+              -------------------->
+              <div class="ae-content-w">
+                <!--------------------
+                START - Email Content Header
+                -------------------->
+                <div class="aec-head">
+                  <div class="actions-left">
+                    <a class="highlight" href="#"><i class="os-icon os-icon-ui-02"></i></a>
+                  </div>
+                  <div class="actions-right">
+                    <div class="aeh-actions">
+                      <a href="#"><i onclick="deleteNote()" class="os-icon os-icon-ui-15"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!--------------------
+                END - Email Content Header
+                --------------------><!--------------------
+      START - Email Content
+      -------------------->
+                <div class="ae-content">
+                  <div id="display-note" class="older-pack" style="display: block">
+
+                  </div>
+                </div>
+                <!--------------------
+                END - Email Content
+                -------------------->
+              </div>
+            </div>
+          </div><!--------------------
+              START - Color Scheme Toggler
+              -------------------->
+          <div class="floated-colors-btn first-floated-btn">
+            <div class="os-toggler-w">
+              <div class="os-toggler-i">
+                <div class="os-toggler-pill"></div>
+              </div>
+            </div>
+            <span>Dark </span><span>Colors</span>
+          </div>
+          <!--------------------
+          END - Color Scheme Toggler
+          --------------------><!--------------------
+              START - Demo Customizer
+              -------------------->
+          <!--------------------
+          END - Demo Customizer
+          --------------------><!--------------------
+              START - Chat Popup Box
+              -------------------->
+          <!--------------------
+          END - Chat Popup Box
+          -------------------->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="display-type"></div>
+</div>
+
+<div aria-hidden="true" class="modal fade" id="taskModal" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header faded smaller">
+        <div class="modal-title">
+          Create new note
+        </div>
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true"> &times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form action="/newNote" method="post" id="new_note_form">
+          <div class="form-group">
+            <label for="">Title</label><input class="form-control" name="title" placeholder="Enter note title" type="text">
+          </div>
+          <div class="form-group">
+            <label for="">Content</label><textarea class="form-control" name="content" placeholder="Enter note content" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer buttons-on-left">
+        <button class="btn btn-success" type="button" onclick="newNoteSubmit()"> Save changes</button><button class="btn btn-link" data-dismiss="modal" type="button"> Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+{% endblock %}
+
+{% block js %}
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/chart.js/dist/Chart.min.js"></script>
+<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+<script src="bower_components/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+<script src="bower_components/ckeditor/ckeditor.js"></script>
+<script src="bower_components/bootstrap-validator/dist/validator.min.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+<script src="bower_components/dropzone/dist/dropzone.js"></script>
+<script src="bower_components/editable-table/mindmup-editabletable.js"></script>
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="bower_components/tether/dist/js/tether.min.js"></script>
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="bower_components/bootstrap/js/dist/util.js"></script>
+<script src="bower_components/bootstrap/js/dist/alert.js"></script>
+<script src="bower_components/bootstrap/js/dist/button.js"></script>
+<script src="bower_components/bootstrap/js/dist/carousel.js"></script>
+<script src="bower_components/bootstrap/js/dist/collapse.js"></script>
+<script src="bower_components/bootstrap/js/dist/dropdown.js"></script>
+<script src="bower_components/bootstrap/js/dist/modal.js"></script>
+<script src="bower_components/bootstrap/js/dist/tab.js"></script>
+<script src="bower_components/bootstrap/js/dist/tooltip.js"></script>
+<script src="bower_components/bootstrap/js/dist/popover.js"></script>
+<script src="js/demo_customizer.js?version=4.4.0"></script>
+<script src="js/main.js?version=4.4.0"></script>
+<script id="store">
+
+  let notes = JSON.parse(JSON.stringify({{ notes | dump | safe }}))
+
+  function newNoteSubmit() {
+    document.getElementById('new_note_form').submit();
+  }
+
+  function noteClick(item) {
+    let pos = +item.getAttribute('pos');
+
+    updateDisplayNote(pos);
+  }
+
+  function updateDisplayNote(pos) {
+    $('#display-note').html(
+      `
+      <div class="aec-full-message-w">
+                      <div class="aec-full-message">
+                        <div class="message-head">
+                          <div class="user-w with-status status-green">
+                            <div class="user-name">
+                              <h6 class="user-title">
+                                ${notes[pos].title}
+                              </h6>
+                            </div>
+                          </div>
+                          <div class="message-info">
+                            ${notes[pos].date}
+                          </div>
+                        </div>
+                        <div class="message-content">
+                          ${notes[pos].content}
+                        </div>
+                      </div>
+                    </div>
+      `
+    )
+  }
+
+  function deleteNote() {
+    // delete from ui list
+
+    // select next display note
+
+    // get call for deleting from db
+
+  }
+</script>
+
+{% endblock %}
